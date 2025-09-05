@@ -1,6 +1,6 @@
 # EPC vs Non-EPC
 
-This project provides a Python script (`epc_scorer.py`) designed to distinguish Energy Performance Certificates (EPC / Energieausweis) from non-EPC documents.
+This project provides a Python script (`test2.py`) designed to distinguish Energy Performance Certificates (EPC / Energieausweis) from non-EPC documents.
 
 The scoring approach combines:
 - OCR with Tesseract
