@@ -1,19 +1,17 @@
-# EPC vs Non-EPC
+# EPC vs Non-EPC - Visual Document Analyzer
 
-This project provides a Python script (`test2.py`) designed to distinguish Energy Performance Certificates (EPC / Energieausweis) from non-EPC documents.
+This project provides a Python script (`test.py`) designed to distinguish Energy Performance Certificates (EPC / Energieausweis) from non-EPC documents using **exclusive visual analysis**.
 
-The scoring approach combines:
-- OCR with Tesseract
-- Structural analysis of tables, logos, and signatures
-- Detection of keywords and specific patterns
-- TF-IDF similarity
-- Numerical and visual content verification
+## 🎯 Key Feature
+
+**100% Visual Analysis - No Text Extraction**  
+The system uses only visual features and layout patterns without any textual content extraction or semantic understanding.
 
 ---
 
 ## 📦 Installation
 
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/OnsSK2/EPC_vs_NonEPC.git
    cd EPC_vs_NonEPC
