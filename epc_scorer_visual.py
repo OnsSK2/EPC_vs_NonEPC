@@ -490,7 +490,7 @@ class EPCVisualScorer:
         return max(0.0, min(1.0, similarity))
 
 def benchmark_visual_epc_scorer(image_files, reference_image_path):
-    """Benchmark function for visual scorer"""
+    """Benchmark function for visual scorer with buffer zone handling"""
     scorer = EPCVisualScorer(reference_image_path)
     
     results = []
@@ -503,16 +503,19 @@ def benchmark_visual_epc_scorer(image_files, reference_image_path):
         # Calculate visual score
         score = scorer.calculate_visual_similarity(image_path)
         
-        # DETERMINE EPC STATUS BASED ON SCORE ONLY (no filename)
-        is_epc = score >= 0.88  # STRICT THRESHOLD: ≥ 0.88 = EPC
-        
-        # Status based on STRICT TARGET RANGES
-        if is_epc:
-            # EPC should score ≥ 0.88 - green check if good, red X if too low
-            status = '✅' if score >= 0.88 else '❌'
+        # ✅ CORRECTED: EXPLICIT BUFFER ZONE HANDLING
+        if score >= 0.88:
+            # EPC ZONE: ≥ 0.88 → Valid EPC classification
+            is_epc = True
+            status = '✅'
+        elif score <= 0.60:
+            # NON-EPC ZONE: ≤ 0.60 → Valid Non-EPC classification
+            is_epc = False
+            status = '✅'
         else:
-            # Non-EPC should score ≤ 0.6 - green check if good, red X if too high
-            status = '✅' if score <= 0.6 else '❌'
+            # 🚨 BUFFER ZONE: 0.61-0.87 → EXPLICIT REJECTION
+            is_epc = False  # Classified as Non-EPC but rejected
+            status = '❌'   # Explicit cross mark for buffer zone documents
         
         results.append({
             'filename': filename,
