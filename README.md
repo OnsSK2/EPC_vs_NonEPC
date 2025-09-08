@@ -9,12 +9,7 @@ The system uses only visual features and layout patterns without any textual con
 
 ---
 
-## 📦 Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/OnsSK2/EPC_vs_NonEPC.git
-   cd EPC_vs_NonEPC 
 
 
 ### 🚫 No Text Extraction - Pure Visual Features
