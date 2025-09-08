@@ -30,7 +30,7 @@ weights = {
     'tables': 0.05,       # Table structure presence
     'signature': 0.05     # Signature patterns
 }
-
+```bash
 ## 📦 Installation
 
 1. **Clone the repository**:
