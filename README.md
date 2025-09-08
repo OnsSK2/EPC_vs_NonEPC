@@ -4,15 +4,8 @@
 
 This project successfully addresses the core objective: **Create a scoring function that significantly increases differentiation between EPC and non-EPC documents using exclusive visual analysis.**
 
-## 📊 Performance Results - TARGETS MET ✅
 
-| Document Type | Target Score | Actual Results | Status |
-|---------------|-------------|----------------|--------|
-| ✅ EPC Documents | ≥ 0.88 | 0.890 - 1.000 | ✅ EXCEEDED |
-| ❌ Non-EPC Documents | ≤ 0.60 | 0.301 | ✅ EXCEEDED |
-| 🚫 Buffer Zone | 0.61-0.87 (Avoid) | 0.0% in buffer | ✅ PERFECT |
 
-## 🔍 How It Works - Visual Analysis Only
 
 ### 🚫 No Text Extraction - Pure Visual Features
 The system uses **8 visual feature categories** without any text reading:
